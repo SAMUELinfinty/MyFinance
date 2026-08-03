@@ -7,6 +7,12 @@ import { connectDB } from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
 import profileRoutes from './routes/profile.routes.js';
 import incomeRoutes from './routes/income.routes.js';
+import expenseRoutes from './routes/expense.routes.js';
+import budgetRoutes from './routes/budget.routes.js';
+import savingsGoalRoutes from './routes/savingsGoal.routes.js';
+import dashboardRoutes from './routes/dashboard.routes.js';
+import analyticsRoutes from './routes/analytics.routes.js';
+import transactionRoutes from './routes/transaction.routes.js';
 import { errorHandler } from './middleware/error.middleware.js';
 import { ApiError } from './utils/ApiError.js';
 
@@ -45,6 +51,12 @@ app.get('/health', (req, res) => {
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/profile', profileRoutes);
 app.use('/api/v1/income', incomeRoutes);
+app.use('/api/v1/expenses', expenseRoutes);
+app.use('/api/v1/budget', budgetRoutes);
+app.use('/api/v1/savings', savingsGoalRoutes);
+app.use('/api/v1/dashboard', dashboardRoutes);
+app.use('/api/v1/analytics', analyticsRoutes);
+app.use('/api/v1/transactions', transactionRoutes);
 
 // Catch 404 Routes
 app.use('*', (req, res, next) => {
